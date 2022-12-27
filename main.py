@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from enum import Enum
 
+PET_ID = {"name": "waldi", "version": 0.1}
+
 class Pet_moods(Enum):
     ANGRY = "angry"
     LONELY = "lonely"
@@ -23,7 +25,7 @@ app = FastAPI()
 
 @app.get("/pet_id")
 async def get_pet_id():
-    return {"name": "waldi", "version": 0.1}
+    return PET_ID
 
 
 @app.get("/care_log")
